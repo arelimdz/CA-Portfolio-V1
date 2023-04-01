@@ -1,0 +1,168 @@
+// colors from homepage
+$aqua-marina:#00C4CC;
+$aqua-marina-light:#80c9cb;
+$blue: #006EB4;
+$blue-light: #518baf;
+$violet: #A548FF;
+$purple:  #6422B8;
+
+// Coomplementaries colors
+$purple-light:  #886baf;
+$home-yellow: #FEC95C;
+$dark-text:#696e6e;
+$main-dark-color:#0F1213 ;
+$light-text: white;
+$small-description: #9b9fab;
+$dark-yellow:  #804d01;
+$medium-dark-yellow: #ad6801;
+$light-dark-yellow: #ba7e23;
+
+
+// background-colors
+$box-aqua-marina:rgba(181, 242, 243, 0.292);
+$box-blue: #61afdff1;
+$box-violet: #ccd6f6ea;
+$box-pink:#ff738f86;
+$box-purple:  #ded2f2cf;
+$background-light: white;
+$box-yellow: #fec85cda;
+
+
+
+// Share styles in the website
+@mixin body-style {
+    background-color: $background-light;
+    font-family: 'Raleway', sans-serif;
+    margin: auto;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+}
+
+@mixin page-title {
+    font-size: 4rem;
+    letter-spacing: 5px;
+    text-align: center; 
+}
+
+@mixin paragraph {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+@mixin hover-style {
+    background-color: $main-dark-color;
+    color: $main-light-color;
+    border: 1px $main-light-color solid;
+}
+
+@mixin hover-scale {
+    -ms-transform: scale(1.2); 
+    -webkit-transform: scale(1.2); 
+    transform: scale(1.2);
+}
+
+@mixin button-style {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 7px 10px;
+    border-radius: 3px;
+    transition: 1s ease;
+    
+}
+
+@mixin check-action {
+    display: none;
+    &:checked ~ .hidden {
+        display: block;
+    }
+    &:checked ~ label{
+        display: none;
+    }
+}
+
+
+@mixin anchor-hover {
+    text-decoration: none;
+    color: $light-text;
+    transition: 0.3s ease-in-out;
+    &:hover {
+        text-decoration: underline 2px;
+    }
+}
+
+// Styling use for Home 
+@mixin box-size {
+    display: flex;
+    align-items: center;
+    font-family: 'Urbanist', sans-serif;
+    justify-content: center;
+    padding: 20px;
+    a{
+        text-decoration: none;
+        color: white;
+        font-size: 2.5rem;
+        transition: 1s ease-in-out;
+        text-align: center;
+
+        &:hover {
+            -ms-transform: scale(1.5); 
+            -webkit-transform: scale(1.5); 
+            transform: scale(1.5);
+        }
+    }
+}
+
+
+// Styling for elements in About Page
+
+@mixin about-boxes {
+    width: 50%;
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+     
+    
+    h3 {
+        letter-spacing: 1.5px;
+        font-size: 2rem;
+        color: $blue;
+        font-weight: 600;
+        margin-block: 20px 0px;
+        text-align: start;
+    }
+    p {
+        @include paragraph ();
+        color: $light-text;
+        text-align: justify;
+
+    }
+    .button{
+        margin: 20px 0px;
+        text-align: justify;
+        
+        a{
+            @include button-style ();
+            background-color: $home-yellow;
+            color: $light-text;
+            font-weight: 600;
+            border: 3px solid $home-yellow;
+            border-radius: 10px;
+            &:hover {
+                background-color: $box-aqua-marina;
+                border: 3px solid $light-text;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,195 @@
+@import "../components/footer";
+@import "../components/header";
+@import "../components/main-styling";
+@import "../components/breakpoints";
+
+
+body {
+    @include body-style ();
+    margin-bottom: 150px;
+
+    header {
+        background-color: $aqua-marina;
+    }
+  
+    .presetation-card{
+        width: 70vw;
+        height: 30vh;
+        padding: 100px 0px 50px 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .name-container {
+            width: 70%;
+            display: flex;
+            flex-direction:column; 
+            align-items: center;
+            justify-content: center;
+            h1{
+                @include page-title();
+                color: $aqua-marina;
+                margin-block: 5px 5px; 
+            }
+            h2 {
+                color: $blue;
+                font-size: 2rem;
+                font-family: 'Source Code Pro', monospace;
+                letter-spacing: 5px;
+                font-weight: 500;
+                margin-block: 10px 10px;
+                text-align: center;
+            }
+        }
+
+        .photo-container {
+            width: 250px;
+            img{
+                width: 100%;
+                height: auto;
+                border-radius: 50%;   
+            }
+        }
+    }
+    .content {
+        width: 70vw;
+        display: flex;
+        flex-direction: row;
+        align-content: flex-start;
+        background-color: $aqua-marina-light;
+        border-radius: 15px;
+
+        .about-me-box {
+            text-align: start;
+        @include about-boxes();
+        }
+
+        .experience-box {
+            text-align: start;
+            @include about-boxes();
+
+            ul {
+                width: 100%;
+                @include paragraph ();
+                color: $light-text;
+
+            }
+        }
+    } 
+
+}
+
+@media screen and (max-width: $bp-md) {
+    body {
+        padding-bottom: 200px;
+        .presetation-card {
+            width: 90vw;
+            padding: 100px 0px 50px 0px;
+
+            .name-container {
+                h1{
+                    font-size: 2.5rem;
+                    margin-block: 10px 0px;
+                    letter-spacing: 1px;  
+                }
+                h2 {
+                    color: $blue;
+                    font-size: 1.25rem;
+                    letter-spacing: 1px;
+                    margin-block: 0px 0px;
+                }
+            }
+
+            .photo-container {
+                width: 35%;
+            }
+        }
+
+        .content {
+            flex-wrap: nowrap;
+            width: 90vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0px;
+            .about-me-box {
+                @include about-boxes-md;
+            }            
+            .experience-box {
+                @include about-boxes-md;
+
+                ul{
+                    font-weight: 300;
+                }
+            }
+         }
+
+    }
+}
+
+
+
+
+@media screen and (max-width:$bp-sm) {
+
+    body {
+
+        .presetation-card {
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 150px 0px 50px 0px;
+            gap: 50px;
+
+            .name-container {
+                width: 80%;
+                height: 50px;
+                padding: 20px 0px;
+
+                display: flex;
+                flex-direction:column; 
+                align-items: center;
+                justify-content: center;
+                h1{
+                    font-size: 2.5rem;
+                    margin-block: 0px 0px;
+                    letter-spacing: 1.5px;  
+                }
+                h2 {
+                    color: $blue;
+                    font-size: 1.7rem;
+                    letter-spacing: 1px;
+                    margin-block: 0px 0px;
+                }
+            }
+
+            .photo-container {
+                width: 150px;
+            }
+        }
+        .content {
+            flex-wrap: nowrap;
+            width: 100vw;
+            padding-bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 0px;
+            border-radius: 0px;
+            margin-bottom: 100px;
+
+            .about-me-box {
+                @include about-boxes-sm;
+            }
+            
+            .experience-box {
+                @include about-boxes-sm;
+
+                ul{
+                    font-weight: 300;
+                }
+            }
+         }
+    }
+}

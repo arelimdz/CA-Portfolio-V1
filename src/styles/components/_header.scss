@@ -1,0 +1,127 @@
+@import "./main-styling";
+@import "./breakpoints";
+
+
+header {
+    width: 100vw;
+    height: 60px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+   
+    .terminal-logo {
+        width: 30%;
+        margin-left: 15vw;
+
+        a{
+            letter-spacing: 2px;
+            font-size: 1rem;
+            @include anchor-hover();
+        }
+    }
+
+    .top-nav{
+        width: 70%;
+        margin-right: 15vw;
+        text-align: end;
+        text-decoration: none;
+        display: flex-end;
+
+        a{
+            @include anchor-hover();
+            padding: 10px 0px;
+            margin-left: 5px;        
+        }
+
+        #resume {
+            padding: 10px 15px;
+            background-color: $home-yellow;
+            color: $light-text;
+            border-radius: 5px;
+            transition: 0.3s ease-in-out;
+            text-decoration: none;
+            border: 3px solid $home-yellow;
+
+            &:hover {
+                background-color: transparent;
+                border: 3px solid white;
+            }
+            
+        }
+    }
+}
+
+
+@media screen and (max-width:$bp-md) {
+
+    header {
+        width: 100vw;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.1rem;
+
+        .terminal-logo {
+            width: 100%;
+            height: 40px;
+            margin:0vw 10vw;
+            text-align: center;
+        }
+
+        .top-nav{
+            width: 100%;
+            height: 40px;
+            margin:0vw 10vw;
+            text-align: center;
+            background-color: $aqua-marina-light;
+            padding: 10px 0px;
+
+            #resume {
+                padding: 2.5px 10px;
+
+            }
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width:$bp-sm) {
+
+    header {
+        width: 100vw;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 16px;
+
+        .terminal-logo {
+            width: 100%;
+            height: 40px;
+            margin:0vw 10vw;
+            text-align: center;
+            margin: 10px 0px;
+        }
+
+        .top-nav{
+            width: 100%;
+            height: 40px;
+            margin:0vw 10vw;
+            text-align: center;
+            text-decoration: none;
+            background-color: $aqua-marina-light;
+            padding: 10px 0px;
+
+            #resume {
+                padding: 2.5px 10px;
+
+            }
+        }
+    }
+}

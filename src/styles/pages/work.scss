@@ -1,0 +1,168 @@
+@import "../components/main-styling";
+@import "../components/header";
+@import "../components/footer";
+@import "../components/breakpoints";
+
+body {
+    @include body-style();
+    margin-bottom: 100px;
+
+    header {
+        background-color: $purple-light;
+    }
+    .container-projects {
+
+        display: block;
+        width: 70vw;
+        align-items: center;
+        padding: 100px 0px;
+
+        .title {
+            @include page-title;
+            color: $purple-light;
+            text-align: center;
+        }
+
+        .project {
+            padding: 100px 0px 50px 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            .title-project {
+                font-size: 2.5rem;
+                color: $dark-text;
+                font-weight: 600;
+                margin-block: 10px;
+                text-align: center;
+                letter-spacing: 1px
+
+            }
+            .subtitle {
+                font-size: 1.5rem;
+                color: $dark-text;
+                font-weight: 500;
+                margin-block: 0px 10px;
+
+            }
+            .extra-info {
+                font-size: 1.2rem;
+                color: $purple-light;
+                font-weight: 500;
+                margin-block: 10px;
+                letter-spacing: 1.5px;
+            }
+
+            .br {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .container-img {
+                    width: 50%;
+                    img{
+                        width: 100%;
+                        height: auto;
+                        border-radius: 15px;  
+                    }
+                    .attribute-info {
+                        font-size: 0.85rem;
+                        color: $small-description;
+                        text-align: center;
+                        text-align: center;
+                        a {
+                            text-decoration: none;
+                            color: $small-description;
+                            font-weight: 800;
+                        }
+                    }
+                }
+                .description {
+                    @include paragraph;
+                    padding: 20px 60px;
+                    text-align: justify;
+                    color: $dark-text;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: $bp-md) {
+    body {
+        .container-projects {
+            width: 90vw;
+
+            .title{
+                @include md-page-title;
+            }
+            .project {
+                padding: 50px 0px;
+                .title-project {
+                    font-size: 1.75rem;
+                }
+                .subtitle{
+                    font-size: 1.25rem;
+                }
+                .extra-info {
+                    font-size: 1rem;
+                    letter-spacing: 1px;
+                }
+                .description {
+                    @include md-paragraph;
+                    width: 80%;
+                    padding: 20px 20px;
+                    background-color: $box-purple;
+                    border-radius: 10px;
+                }
+                .container-img {
+                    width: 75%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $bp-sm) {
+    body {
+        .container-projects {
+            width: 100vw;
+            
+
+            .title{
+                @include sm-page-title;
+            }
+            .project {
+
+                padding: 20px 0px;
+                .title-project {
+                    font-size: 1.5rem;
+                    color: $dark-text;
+                }
+                .subtitle{
+                    font-size: 1.25rem;
+                    color: $purple-light;
+                }
+
+                .br {
+                    padding: 20px 0px;
+                    background-color: $box-purple;
+                    .description {
+                        background-color: transparent;
+                        @include sm-paragraph;
+                        color: $dark-text;
+                        padding: 20px 20px;
+                    }
+                    .container-img {
+                        width: 75%;
+                    }
+                    .extra-info {
+                        font-size: 1rem;
+                        letter-spacing: 0px;
+                        color: $purple-light;
+                    }
+                }
+            }
+        }
+    }
+}

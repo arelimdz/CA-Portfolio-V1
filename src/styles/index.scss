@@ -1,0 +1,209 @@
+@import "./styles/components/main-styling";
+@import "./styles/components/breakpoints";
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    .container {
+        display: flex;
+        flex-direction:row;
+        flex-wrap: wrap;
+        
+        .presentation-card{
+            width:50vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: 0px;
+            background-color: $home-yellow;
+
+            h1 {
+                font-family: 'Euphoria Script', cursive;
+                letter-spacing: 5px;
+                color: white;
+                font-size: 7rem;
+                text-align: center;
+                margin-block: 0px 0px;
+                padding: 20px;
+            }
+
+            h3 {
+                font-family: 'Urbanist', sans-serif;
+                letter-spacing: 5px;
+                font-weight: 500;
+                color: white;
+                font-size: 3rem;
+                text-align: center;
+                padding: 0px 20px;
+            }
+            p {
+                font-family: 'Urbanist', sans-serif;
+                letter-spacing: 2px;
+                font-weight: 500;
+                color: white;
+                font-size: 1.5rem;
+                padding: 20px;
+                text-align: center;
+                margin-block: 0px 0px;
+                
+            }
+
+        }
+
+        .home-menu {
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+            grid-template-rows: repeat(5, 20%);
+            height: 100vh;
+            width: 50vw;
+            grid-template-areas:
+                "a b "
+                "a b "
+                "c d"
+                "c d"
+                "e e";
+
+            .about-me {
+                @include box-size ();
+                background-color: #00C4CC ;
+                grid-area: a;
+
+            }
+            .work {
+                @include box-size ();
+                background-color: $purple-light;
+                grid-area: b;
+
+            }
+            .blog {
+                @include box-size ();
+                background-color: $aqua-marina-light;
+                grid-area: c;
+            }
+
+            .resume {
+                @include box-size ();
+                background-color: $purple;
+                grid-area: d;
+            }
+
+            .contact {
+                @include box-size ();
+                background-color: $blue;
+                grid-area: e;
+            }
+
+        }
+
+
+
+    }
+
+
+}
+@media screen and (max-width: $bp-md) {
+    body {
+
+        .container {
+            flex-direction: column;
+
+            .presentation-card{
+                width:100vw;
+                height: 50vh;
+
+                h1 {
+                    font-size: 4.5rem;
+                    letter-spacing: 2px;
+                    color: $light-dark-yellow;
+                }
+                h3 {
+                    font-size: 2.5rem;
+                    font-weight: 500;
+                    margin-block: 0px 0px;
+                    color: $light-dark-yellow;
+                }
+                p {
+                    color: $medium-dark-yellow;
+                    font-size: 1.5rem;
+                    letter-spacing: 0px;
+                }    
+            }
+
+            .home-menu {
+                width: 100vw;
+                height: 50vh;
+                .about-me {
+                    @include font-size-md;
+                }
+                .blog {
+                    @include font-size-md;
+                }
+                .resume {
+                    @include font-size-md;
+                }
+                .work {
+                    @include font-size-md;
+                }
+                .contact {
+                    @include font-size-md;
+                }
+            }
+        }
+    }  
+}
+
+
+@media screen and (max-width:$bp-sm) {
+    body{
+        .container {
+            flex-direction: column;
+
+            .presentation-card{
+                width:100vw;
+                height: 50vh;
+                
+                h1 {
+                    font-size: 4.5rem;
+                    letter-spacing: 2px;
+                    color: $light-dark-yellow;
+                }
+                h3 {
+                    font-size: 2rem;
+                    font-weight: 600;
+                    margin-block: 0px 0px;
+                    color: $light-dark-yellow;
+                }
+                p {
+                    color: $medium-dark-yellow;
+                    font-size: 1.1rem;
+                    letter-spacing: 0px;
+                }    
+            }
+
+            .home-menu {
+                width: 100vw;
+                height: 50vh;
+
+                .about-me {
+                    @include font-size-sm;
+                }
+                .blog {
+                    @include font-size-sm;
+                }
+                .resume {
+                    @include font-size-sm;
+                }
+                .work {
+                    @include font-size-sm;
+                }
+
+                .contact {
+                    @include font-size-sm;
+                }
+            }
+        }
+    }
+}

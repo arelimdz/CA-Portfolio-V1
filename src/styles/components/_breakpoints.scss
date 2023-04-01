@@ -1,0 +1,89 @@
+// Breakpoints size
+
+$bp-sm: 480px;
+$bp-md: 768px;
+
+
+
+//***** Breakpoint styling *****
+
+
+// FOR HOME PAGE
+@mixin font-size-sm {
+    a {
+        font-size: 1.5rem;
+    }
+}
+
+@mixin font-size-md {
+    a {
+        font-size: 1.75rem;
+    }
+}
+
+// FOR ABOUT PAGE
+
+
+@mixin about-boxes-sm {
+    width: 80%;
+
+    h3 {
+        font-size: 1.5rem;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+    p {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+    .button{
+        padding: 12px 0px;
+        margin: 50px 0px;
+        text-align: justify;       
+        a{
+            font-size: 1rem;
+        }
+    }
+}
+
+@mixin about-boxes-md {
+    width: 90%;
+    padding: 10px 25px;
+
+    h3 {
+        font-size: 1.75rem;
+        text-align: left;
+        letter-spacing: 1px;
+    }
+    p {
+        @include md-paragraph;
+    }
+    .button{
+        padding: 12px 0px;
+        margin: 50px 0px;
+        text-align: justify;       
+        a{
+            font-size: 1rem;
+        }
+    }
+}
+
+//Mixin for all the pages medium breakpoint
+@mixin md-paragraph {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+@mixin sm-paragraph {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+@mixin md-page-title {
+    font-size: 2.5rem;
+}
+
+@mixin sm-page-title {
+    font-size: 2.25rem;
+    letter-spacing: 0px;
+}
